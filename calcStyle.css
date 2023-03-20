@@ -1,0 +1,108 @@
+body {
+  background-color: rgb(141, 143, 143);
+}
+
+.calculator {
+  max-width: 375px;
+  min-height: 640px;
+  background-color: #ffff;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 20px;
+
+}
+
+.screen {
+  padding-top: 2px;
+  text-align: right;
+  width: 90%;
+  height: 220px;
+  margin: 5% 5% 0% 5%;
+  border-bottom: rgb(211, 208, 208) 1px solid;
+}
+
+
+.input {
+  width: 90%;
+  margin: 8% 5% 0% 5% !important;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 25px;
+}
+
+.output {
+  width: 90%;
+  margin: 0% 5% 2% 5%;
+  font-size: 18px;
+  padding: 25px;
+  font-weight: 600;
+}
+
+
+
+.btn-cal {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  padding: auto;
+  margin: 16px 5px 10px 32px;
+  border-radius: 40px;
+  font-size: 25px;
+  font-weight: 300;
+  border: none;
+  background-color: #fdfbfb;
+}
+
+.size {
+  font-size: 26px !important;
+
+}
+
+.size2 {
+  font-size: 20px !important;
+}
+
+.btn-padd {
+  margin-left: 247px;
+
+}
+
+.btn-color {
+  color: #F58839;
+  font-size: 30px;
+}
+
+.btn-red-color {
+  background-color: #F58839;
+  color: #fff;
+}
+
+.press {
+  background-color: #e9e4e4;
+}
+
+@keyframes big {
+  0% {
+    font-size: 18px;
+  }
+
+  100% {
+    font-size: 30px;
+  }
+}
+
+@keyframes small {
+  0% {
+    font-size: 28px;
+  }
+
+  100% {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.zero {
+  font-size: 30px;
+
+}
