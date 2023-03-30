@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,7 +10,11 @@
   <link rel="stylesheet" href="calcStyle.css">
 </head>
 
+
+
 <body>
+  <div class="main">
+ <div class="item1">
 
   <div class="calculator">
     <div class="screen">
@@ -22,15 +27,15 @@
       <button onclick="clearScreen()" class="btn-cal btn-color size">C</button>
       <button onclick="backSpace()" class="btn-cal btn-color"><span
           class="material-symbols-outlined">backspace</span></button>
-      <button onclick="calclick('%')" class="btn-cal btn-color size2">&#x25;</button>
-      <button onclick="calclick('/')" class="btn-cal btn-color">&#xf7;</button>
+      <button onclick="percentage()" class="btn-cal btn-color size2">&#x25;</button>
+      <button onclick="calclick('÷')" class="btn-cal btn-color">&#xf7;</button>
     </div>
 
     <div class="row">
       <button onclick="calclick(7)" class="btn-cal">7</button>
       <button onclick="calclick(8)" class="btn-cal">8</button>
       <button onclick="calclick(9)" class="btn-cal">9</button>
-      <button onclick="calclick('*')" class="btn-cal btn-color">&#xd7;</button>
+      <button onclick="calclick('×')" class="btn-cal btn-color">&#xd7;</button>
     </div>
     <div class="row">
       <button onclick="calclick(4)" class="btn-cal">4</button>
@@ -45,8 +50,11 @@
       <button onclick="calclick('+')" class="btn-cal btn-color">&#x2b;</button>
     </div>
     <div class="row">
-      <button onclick="calclick('-')" class="btn-cal btn-color"><span
-          class="material-symbols-outlined">menu</span></button>
+
+      <button onclick="togglePage()" class="btn-cal btn-red-color font" id="toggle"><span class="material-symbols-outlined">
+        history
+        </span></button>
+
       <button onclick="calclick(0)" class="btn-cal">0</button>
       <button onclick="calclick('.')" class="btn-cal btn-color">.</button>
 
@@ -54,7 +62,45 @@
     </div>
 
   </div>
+
+</div>
+<div class="item2">
+  <div class="container" id="page">
+   
+  </div>
+</div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="calc_code.js"></script>
+  <script>
+    function togglePage() {
+  document.getElementById("page").classList.toggle("show");
+}
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#toggle').click(function () {
+        data = 'hai'
+        
+        $.ajax({
+          type: "GET",
+          url: "read.php",
+          // dataType:'json',
+          // data: {
+          //   'country': data
+          // },
+          success: function (data) {
+            //  console.log(data)
+            // response =html.date
+            // console.log(response)
+            $('#page').html(data)
+          }
+
+        })
+
+      })
+    })
+</script>
 </body>
 
 </html>
