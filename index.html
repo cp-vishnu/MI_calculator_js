@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>calculator demo</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+  <link rel="stylesheet" href="calcStyle.css">
+</head>
+
+
+<body>
+  <div class="main">
+ <div class="item1">
+  <div class="calculator">
+    <div class="screen">
+
+      <div class="input"></div>
+      <div class="output"><span class="zero">0</span></div>
+    </div>
+
+    <div class="row">
+      <button onclick="clearScreen()" class="btn-cal btn-color size">C</button>
+      <button onclick="backSpace()" class="btn-cal btn-color"><span
+          class="material-symbols-outlined">backspace</span></button>
+      <button onclick="percentage()" class="btn-cal btn-color size2">&#x25;</button>
+      <button onclick="calclick('÷')" class="btn-cal btn-color">&#xf7;</button>
+    </div>
+
+    <div class="row">
+      <button onclick="calclick(7)" class="btn-cal">7</button>
+      <button onclick="calclick(8)" class="btn-cal">8</button>
+      <button onclick="calclick(9)" class="btn-cal">9</button>
+      <button onclick="calclick('×')" class="btn-cal btn-color">&#xd7;</button>
+    </div>
+    <div class="row">
+      <button onclick="calclick(4)" class="btn-cal">4</button>
+      <button onclick="calclick(5)" class="btn-cal">5</button>
+      <button onclick="calclick(6)" class="btn-cal">6</button>
+      <button onclick="calclick('-')" class="btn-cal btn-color">&#x2212;</button>
+    </div>
+    <div class="row">
+      <button onclick="calclick(1)" class="btn-cal">1</button>
+      <button onclick="calclick(2)" class="btn-cal">2</button>
+      <button onclick="calclick(3)" class="btn-cal">3</button>
+      <button onclick="calclick('+')" class="btn-cal btn-color">&#x2b;</button>
+    </div>
+    <div class="row">
+      <button onclick="togglePage()" class="btn-cal btn-red-color font" id="toggle"><span class="material-symbols-outlined">
+        history
+        </span></button>
+      <button onclick="calclick(0)" class="btn-cal">0</button>
+      <button onclick="calclick('.')" class="btn-cal btn-color">.</button>
+
+      <button onclick="btnEqual()" class="btn-cal btn-red-color">&#x3d;</button>
+    </div>
+
+  </div>
+</div>
+<div class="item2">
+  <div class="container" id="page">
+   
+  </div>
+</div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="calc_code.js"></script>
+  <script>
+    function togglePage() {
+  document.getElementById("page").classList.toggle("show");
+}
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#toggle').click(function () {
+        data = 'hai'
+        
+        $.ajax({
+          type: "GET",
+          url: "read.php",
+          // dataType:'json',
+          // data: {
+          //   'country': data
+          // },
+          success: function (data) {
+            //  console.log(data)
+            // response =html.date
+            // console.log(response)
+            $('#page').html(data)
+          }
+
+        })
+
+      })
+    })
+</script>
+</body>
+
+</html>
